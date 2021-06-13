@@ -1,15 +1,12 @@
 # BinaryToDecimal
-Convert Binary numbers to Decimal numbers
 
-***
+Convert Binary numbers to Decimal numbers.
+
+---
+
 ### **TODO**
 
-- [ ] Mercury
-- [x] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+- [ ] create UnitTest for B2D_dll
+- [ ] use logging in every where needed
+- [ ] read DataAnnotaions for api
+- [ ] type documents for every where needed
