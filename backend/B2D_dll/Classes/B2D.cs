@@ -10,7 +10,7 @@ namespace B2D_dll.Classes
     public class B2D : IB2D
     {
         // list of banary numbers
-        private IList<int> binaryNumbers;
+        private IList<string> binaryNumbers = new List<string>();
 
         ///<summary>
         /// This method was implemented from IB2D Interface.
@@ -19,7 +19,7 @@ namespace B2D_dll.Classes
         ///<returns>
         /// list of integer binary numbers
         ///</returns>
-        public IList<int> GetBinary(string oneOrZeroList)
+        public IList<string> GetBinary(string oneOrZeroList)
         {
             if (oneOrZeroList.Length <= 8)
             {
@@ -35,14 +35,18 @@ namespace B2D_dll.Classes
                         int intBinary = int.Parse(stringBinary);
                         if (intBinary == 0 | intBinary == 1)
                         {
-                            binaryNumbers.Append(intBinary);
+                            binaryNumbers.Append(intBinary.ToString());
                             return binaryNumbers;
                         }
-                        flag = false;
-                        return null;
+                        else
+                        {
+                            flag = false;
+                            return null;
+                        }
                     }
                 }
             }
+
             return null;
         }
 
@@ -50,16 +54,17 @@ namespace B2D_dll.Classes
         /// to decimal convertor
         ///</summary>
         /// <returns>
-        ///return converted number from binart to decimal
-        /// </returns>
-        public int ConvertToDecimal(IList<int> binaryList)
+        /// return converted number from binart to decimal
+        /// </returns>        
+        public int ConvertToDecimal(IList<string> binaryList)
         {
             int sum = 0;
             foreach (var num in binaryNumbers)
             {
                 // Position of number 1
                 int position = 0;
-                if (num == 1)
+                var number = int.Parse(num);
+                if (number == 1)
                 {
                     // to the power of position where binary number is 1
                     int powTwo = Convert.ToInt32(Math.Pow(position, 2));
@@ -85,7 +90,7 @@ namespace B2D_dll.Classes
         ///</returns>
         public string ReturnResult(string setBinaryNumber)
         {
-            IList<int> getBinaryMethod = GetBinary(setBinaryNumber);
+            IList<string> getBinaryMethod = GetBinary(setBinaryNumber);
             int convertToDecimalMethod = ConvertToDecimal(getBinaryMethod);
             return convertToDecimalMethod.ToString();
         }
