@@ -10,3 +10,11 @@ Convert Binary numbers to Decimal numbers.
 - [ ] use logging in every where needed
 - [ ] read DataAnnotaions for api
 - [ ] type documents for every where needed
+
+---
+
+#### list of what to do in a test
+
+- arrange
+- act
+- assert
