@@ -3,9 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Binary2DecimalAPI.Interfaces;
+using B2D_dll.Interfaces;
 
-namespace Binary2DecimalAPI.Classes
+namespace B2D_dll.Classes
 {
     public class B2D : IB2D
     {

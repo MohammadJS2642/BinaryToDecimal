@@ -2,7 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-namespace Binary2DecimalAPI.Interfaces
+namespace B2D_dll.Interfaces
 {
     public interface IB2D
     {
