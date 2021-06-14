@@ -19,7 +19,7 @@ namespace B2D_dll.Classes
         ///<returns>
         /// list of integer binary numbers
         ///</returns>
-        public IList<int> getBinary(string oneOrZeroList)
+        public IList<int> GetBinary(string oneOrZeroList)
         {
             if (oneOrZeroList.Length <= 8)
             {
@@ -52,7 +52,7 @@ namespace B2D_dll.Classes
         /// <returns>
         ///return converted number from binart to decimal
         /// </returns>
-        public int convertToDecimal(List<int> binaryList)
+        public int ConvertToDecimal(IList<int> binaryList)
         {
             int sum = 0;
             foreach (var num in binaryNumbers)
@@ -74,6 +74,20 @@ namespace B2D_dll.Classes
             }
 
             return sum;
+        }
+
+
+        ///<summary>
+        /// for simplyfing use this class
+        ///</summary>
+        ///<returns>
+        /// string: convertToDecimalMethod
+        ///</returns>
+        public string ReturnResult(string setBinaryNumber)
+        {
+            IList<int> getBinaryMethod = GetBinary(setBinaryNumber);
+            int convertToDecimalMethod = ConvertToDecimal(getBinaryMethod);
+            return convertToDecimalMethod.ToString();
         }
     }
 }
