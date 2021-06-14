@@ -10,7 +10,7 @@ namespace B2D_dll.Classes
     public class B2D : IB2D
     {
         // list of banary numbers
-        IList<int> binaryNumbers;
+        private IList<int> binaryNumbers;
 
         ///<summary>
         /// This method was implemented from IB2D Interface.
