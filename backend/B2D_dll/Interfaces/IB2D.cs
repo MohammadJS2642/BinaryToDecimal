@@ -7,9 +7,9 @@ namespace B2D_dll.Interfaces
     public interface IB2D
     {
         // get list of binary (0 or 1) in a list
-        public IList<int> getBinary(string oneOrZeroList);
+        public IList<int> GetBinary(string oneOrZeroList);
 
         // convert bianry to deciaml  
-        public int convertToDecimal(List<int> binaryList);
+        public int ConvertToDecimal(IList<int> binaryList);
     }
 }
