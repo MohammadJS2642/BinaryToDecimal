@@ -1,25 +1,30 @@
-using System.Reflection;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using B2D_dll.Interfaces;
 
 namespace B2D_dll.Classes
 {
     public class B2D : IB2D
     {
+        #region  Fields
         // list of banary numbers
-        private IList<string> binaryNumbers = new List<string>();
+        private List<string> binaryNumbers = new List<string>();
+
+        // for create a dictionary for testing 
+        // private IDictionary<string, string> showToUser = new Dictionary<string, string>();
+
+        private int sum = 0;
+
+        #endregion
 
         ///<summary>
         /// This method was implemented from IB2D Interface.
         /// get a list of binary (0 or 1) numbers.
         ///</summary>
         ///<returns>
-        /// list of integer binary numbers
+        /// list of string binary numbers
         ///</returns>
-        public IList<string> GetBinary(string oneOrZeroList)
+        public List<string> GetBinary(string oneOrZeroList)
         {
             if (oneOrZeroList.Length <= 8)
             {
@@ -35,13 +40,11 @@ namespace B2D_dll.Classes
                         int intBinary = int.Parse(stringBinary);
                         if (intBinary == 0 | intBinary == 1)
                         {
-                            binaryNumbers.Append(intBinary.ToString());
-                            return binaryNumbers;
+                            binaryNumbers.Add(intBinary.ToString());
                         }
                         else
                         {
                             flag = false;
-                            return null;
                         }
                     }
                 }
@@ -56,9 +59,9 @@ namespace B2D_dll.Classes
         /// <returns>
         /// return converted number from binart to decimal
         /// </returns>        
-        public int ConvertToDecimal(IList<string> binaryList)
+        public int ConvertToDecimal(List<string> binaryList)
         {
-            int sum = 0;
+            // int sum = 0;
             foreach (var num in binaryNumbers)
             {
                 // Position of number 1
@@ -90,7 +93,7 @@ namespace B2D_dll.Classes
         ///</returns>
         public string ReturnResult(string setBinaryNumber)
         {
-            IList<string> getBinaryMethod = GetBinary(setBinaryNumber);
+            List<string> getBinaryMethod = GetBinary(setBinaryNumber);
             int convertToDecimalMethod = ConvertToDecimal(getBinaryMethod);
             return convertToDecimalMethod.ToString();
         }
